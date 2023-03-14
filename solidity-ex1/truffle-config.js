@@ -1,3 +1,8 @@
+// const HDWalletProvider = require("@truffle/hdwallet-provider");
+// const mnemonic =
+//   "seven fish enrich sample inject satisfy lawn link donate robust jump clarify";
+// const QuickNodeURL =
+//   "https://billowing-magical-mound.ethereum-goerli.discover.quiknode.pro/9f80e458111fcc5cce95b047150d330a16883fcf/";
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -46,6 +51,14 @@ module.exports = {
       host: "127.0.0.1", // Localhost (default: none)
       port: 8545, // Standard Ethereum port (default: none)
       network_id: "*", // Any network (default: none)
+    },
+    georli: {
+      provider: () => new HDWalletProvider(mnemonic, QuickNodeURL),
+      network_id: 5, // goerli's chain id
+      gas: 550000, // goerli has a lower block limit than mainnet
+      confirmations: 0, // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200000, // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: false, // Skip dry run before migrations? (default: false for public nets )
     },
     // Another network with more advanced options...
     // advanced: {

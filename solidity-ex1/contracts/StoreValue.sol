@@ -5,7 +5,7 @@ contract StoreValue{
 
     uint value;
 
-    function set(uint v) public{
+    function set(uint v) public {
         value = v;
     }
 
